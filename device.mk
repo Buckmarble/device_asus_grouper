@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.carrier=wifi-only
-
 PRODUCT_COPY_FILES := \
     device/asus/grouper/init.grouper.rc:root/init.grouper.rc
 
@@ -27,7 +24,7 @@ $(call inherit-product, device/asus/grouper/device-common.mk)
 $(call inherit-product-if-exists, vendor/asus/grouper/device-vendor.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carrier=wifi-only
+   dalvik.vm.dexopt-data-only=1
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/asus/grouper/overlay
